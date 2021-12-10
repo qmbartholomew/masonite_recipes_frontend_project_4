@@ -1,23 +1,96 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react'
+import {Route, Routes, Link, useNavigate} from 'react-router-dom'
+
+/*      COMPONENTES     */
+import AllRecipes from './pages/AllRecipes';
+import SingleRecipe from './pages/SingleRecipe';
+import Form from './pages/Form';
 
 function App() {
+  /*      STATE AND VARIABLES     */
+  const URL = 'https://qb-masonite-cookbook-backend.herokuapp.com/recipes/'
+  const navigate = useNavigate()
+  const [recipes, setRecipes] = useState([])
+  const nullRecipe = {
+    name: '',
+    image: '',
+    instructions: '',
+    ingredients: '',
+    url: 'Original Recipe'
+  }
+  const [targetRecipe, setTargetRecipe] = useState(nullRecipe)
+
+
+  /*      FUNCTIONS     */
+  const getRecipes = async () => {
+    const response = await fetch(URL)
+    const data = await response.json()
+    setRecipes(data)
+  }
+
+  const addRecipes = async (newRecipe) => {
+    await fetch(URL, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newRecipe)
+    })
+    getRecipes()
+  }
+
+  const getTargetRecipe = (recipe) => {
+    setTargetRecipe(recipe)
+    navigate('/edit')
+  }
+
+  const updateRecipe = async (recipe) => {
+    await fetch(URL + recipe.id, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(recipe)
+    })
+    getRecipes()
+  }
+
+  const deleteRecipe = async (recipe) => {
+    await fetch(URL + recipe.id, {
+      method: 'delete'
+    })
+    getRecipes()
+    navigate('/')
+  }
+
+  /*      USEEFFECT     */
+  useEffect(() => {
+    getRecipes()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Masonite Cookbook</h1>
+      <Link to="/new"><button>Create New Todo</button></Link>
+      <Routes>
+        <Route path='/' element={<AllRecipes recipes={recipes} />} />
+        <Route path='/recipes/:id' element={<SingleRecipe
+         recipes={recipes}
+         edit={getTargetRecipe}
+         deleteRecipe={deleteRecipe}
+          />} />
+        <Route path='/new' element={<Form
+          initialRecipe={nullRecipe}
+          handleSubmit={addRecipes}
+          buttonLabel='Create Recipe'
+          />} />
+        <Route path='/edit' element={<Form
+        initialRecipe={targetRecipe}
+        handleSubmit={updateRecipe}
+        buttonLabel='Update Recipe'
+         />} />
+      </Routes>
     </div>
   );
 }
