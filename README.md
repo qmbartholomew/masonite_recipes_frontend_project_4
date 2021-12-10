@@ -53,6 +53,7 @@ A user should be able to delete a message on the forum
 
 ## Component Tree
 
+```
 -> App
     -> Routes
       -> Route |path: "/recipes"|
@@ -63,3 +64,4 @@ A user should be able to delete a message on the forum
         -> Form
       -> Route |path="/recipes/edit/:id|
         -> Form
+```
