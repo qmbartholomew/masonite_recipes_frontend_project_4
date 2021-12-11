@@ -7,7 +7,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
     const instructions = recipe?.instructions.split(',')
     const ingredients = recipe?.ingredients.split(',')
 
-    return <div className='recipeCard'>
+    return <div>
         <h1>{recipe?.name}</h1>
         <img src={`${recipe?.image}`} />
         <div className='recipeInfo'>
@@ -23,7 +23,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
                     return <li>{i}</li>
                 })}
             </ul>
-            {recipe.url == "Original Recipe" ?
+            {recipe?.url == "Original Recipe" ?
             <p className='reference'>Original Recipe</p> :
             <a className='reference'><p>{recipe?.url}</p></a>}
             <button onClick={() => deleteRecipe(recipe)}>Delete</button>

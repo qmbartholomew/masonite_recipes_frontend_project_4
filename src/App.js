@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.css';
 import {useState, useEffect} from 'react'
 import {Route, Routes, Link, useNavigate} from 'react-router-dom'
 
@@ -71,26 +71,33 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Masonite Cookbook</h1>
-      <Link to="/new"><button>Create New Todo</button></Link>
-      <Routes>
-        <Route path='/' element={<AllRecipes recipes={recipes} />} />
-        <Route path='/recipes/:id' element={<SingleRecipe
-         recipes={recipes}
-         edit={getTargetRecipe}
-         deleteRecipe={deleteRecipe}
+      <div className='navbar'>
+        <div className='navTitle'>Masonite Cookbook</div>
+        <div className='navLinks'>
+          <Link to="/new"><button>Add New Recipe</button></Link>
+          <Link to="/"><button>Cookbook Home</button></Link>
+        </div>
+      </div>
+      <div className='display'>
+        <Routes>
+          <Route path='/' element={<AllRecipes recipes={recipes} />} />
+          <Route path='/recipes/:id' element={<SingleRecipe
+          recipes={recipes}
+          edit={getTargetRecipe}
+          deleteRecipe={deleteRecipe}
+            />} />
+          <Route path='/new' element={<Form
+            initialRecipe={nullRecipe}
+            handleSubmit={addRecipes}
+            buttonLabel='Create Recipe'
+            />} />
+          <Route path='/edit' element={<Form
+          initialRecipe={targetRecipe}
+          handleSubmit={updateRecipe}
+          buttonLabel='Update Recipe'
           />} />
-        <Route path='/new' element={<Form
-          initialRecipe={nullRecipe}
-          handleSubmit={addRecipes}
-          buttonLabel='Create Recipe'
-          />} />
-        <Route path='/edit' element={<Form
-        initialRecipe={targetRecipe}
-        handleSubmit={updateRecipe}
-        buttonLabel='Update Recipe'
-         />} />
-      </Routes>
+        </Routes>
+      </div>
     </div>
   );
 }

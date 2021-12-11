@@ -1,0 +1,83 @@
+/*          Overall, Background styling         */
+.App {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100rem;
+    width: 100%;
+    padding-top: 7%;
+    text-align: center;
+    background-image: linear-gradient(#B7094C, #A01A58, #892B64, #723C70, #5C4D7D, #455E89, #2E6F95, #1780A1, #0091AD);
+    overflow: scroll;
+}
+/*          Navbar styling          */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 7%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .7);
+}
+.navTitle {
+    margin: 10px;
+    font-size: x-large;
+}
+.navLinks {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.navLinks button {
+    margin: 0 5px 0 5px;
+    background-color: inherit;
+    border: none;
+}
+.navLinks button:focus {
+    background-color: inherit;
+    border: none;
+}
+.navLinks button:hover {
+    background-color: white;
+    color: black;
+    transition: .4s;
+}
+/*          Body styling            */
+.display {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*          Index recipe styling            */
+.recipeCard {
+    height: 30rem;
+    width: 24%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+.recipeCard:hover {
+    background-color: rgba(0, 0, 0, .6);
+    transition: .2s;
+    cursor: pointer;
+}
+.recipeCard h3 {
+    color: rgb(205, 139, 221);
+}
+.recipeCard p {
+    color: #8BBEE8FF;
+    margin-top: 20px;
+}
+.recipeCard img {
+    height: 50%;
+    width: 65%;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 1px white;
+}
+.recipeCard:hover img {
+    box-shadow: 0 0 3px white;
+}

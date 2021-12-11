@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
+import {Helmet} from 'react-helmet'
 import 'milligram'
 
 ReactDOM.render(
   <Router>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Masonite Cookbook</title>
+    </Helmet>
     <React.StrictMode>
       <App />
     </React.StrictMode>
