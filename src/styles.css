@@ -1,16 +1,16 @@
-/*          Overall, Background styling         */
+/*          OVERALL, BACKGROUND STYLING         */
 .App {
     position: fixed;
     top: 0;
     left: 0;
     height: 100rem;
     width: 100%;
-    padding-top: 7%;
     text-align: center;
     background-image: linear-gradient(#B7094C, #A01A58, #892B64, #723C70, #5C4D7D, #455E89, #2E6F95, #1780A1, #0091AD);
     overflow: scroll;
+    box-sizing: border-box;
 }
-/*          Navbar styling          */
+/*          NAVBAR STYLING          */
 .navbar {
     position: fixed;
     top: 0;
@@ -46,22 +46,25 @@
     color: black;
     transition: .4s;
 }
-/*          Body styling            */
-.display {
+/*          INDEX PAGE STYLING            */
+.iDisplay {
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
     display: flex;
     flex-wrap: wrap;
 }
-/*          Index recipe styling            */
 .recipeCard {
     height: 30rem;
     width: 24%;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, .5);
     border-radius: 5px;
     margin: 10px auto;
 }
 .recipeCard:hover {
     background-color: rgba(0, 0, 0, .6);
-    transition: .2s;
+    border: 1px solid rgba(255, 255, 255, .7);
+    transition: .3s;
     cursor: pointer;
 }
 .recipeCard h3 {
@@ -81,3 +84,64 @@
 .recipeCard:hover img {
     box-shadow: 0 0 3px white;
 }
+/*          SHOW PAGE STYLING           */
+.sDisplay {
+    height: 100%;
+    width: 100%;
+    padding-top: 4%;
+}
+.singleRecipe {
+    height: 55rem;
+    width: 90%;
+    margin: 5% auto;
+    display: flex;
+    border: 1px solid #f8c8e2;
+    border-radius: 5px;
+}
+.cardLeft {
+    color: #8BBEE8FF;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cardLeft img {
+    height: 55%;
+    width: 65%;
+}
+.vr {
+    border-left: 1px solid rgba(0, 0, 0, .3);
+    height: 95%;
+    margin: auto;
+}
+.cardRight {
+    width: 50%;
+    padding-left: 15px;
+    color: rgb(205, 139, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rInfo {
+    height: 80%;
+    padding-top: 9%;
+    display: flex;
+}
+.rInfo li, ul {
+    color: #FFFDD0;
+}
+.rInstructions {
+    width: 50%;
+}
+.rIngredients {
+    width: 50%;
+    padding-left: 15px;
+}
+.rButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+/*          FORM STYLING            */
