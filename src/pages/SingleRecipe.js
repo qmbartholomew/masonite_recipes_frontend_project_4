@@ -35,7 +35,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
                 </div>
                 {recipe?.url == "Original Recipe" ?
                 <p className='reference'>Original Recipe</p> :
-                <p className='reference'><a href={recipe?.url}>{recipe?.url}</a></p>}
+                <p><a className='reference' href={recipe?.url}>{recipe?.url}</a></p>}
                 <div className='rButtons'>
                     <button onClick={() => deleteRecipe(recipe)}>Delete</button>
                     <button onClick={() => edit(recipe)}>Edit</button>

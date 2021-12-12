@@ -24,13 +24,13 @@
     background-color: rgba(0, 0, 0, .7);
 }
 .navTitle {
-    margin: 10px;
+    margin: 1%;
     font-size: x-large;
 }
 .navLinks {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 1%;
 }
 .navLinks button {
     margin: 0 5px 0 5px;
@@ -76,8 +76,9 @@
 }
 .recipeCard img {
     height: 50%;
-    width: 65%;
+    width: 55%;
     margin: 15px auto;
+    border: .5px solid rgba(0, 0, 0, .6);
     border-radius: 5px;
     box-shadow: 0 0 1px white;
 }
@@ -139,9 +140,29 @@
     width: 50%;
     padding-left: 15px;
 }
+.reference {
+    color: #D1FFEA;
+}
 .rButtons {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 /*          FORM STYLING            */
+.fDisplay {
+    height: 100%;
+    width: 100%;
+    padding-top: 7%;
+}
+.fDisplay img {
+    height: auto;
+    width: 32%;
+    margin-bottom: 3%;
+}
+form {
+    width: 80%;
+    margin: auto;
+}
+::placeholder {
+    color: rgba(255, 255, 255, .8);
+}
