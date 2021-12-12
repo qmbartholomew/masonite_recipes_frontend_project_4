@@ -1,6 +1,8 @@
 import './styles.css';
 import {useState, useEffect} from 'react'
 import {Route, Routes, Link, useNavigate} from 'react-router-dom'
+import $ from 'jquery'
+
 
 /*      COMPONENTES     */
 import AllRecipes from './pages/AllRecipes';
@@ -69,6 +71,21 @@ function App() {
     getRecipes()
   }, [])
 
+  /*      JQuery      */
+  
+  $('#modalHide').on('click', () => {
+    $('.modal-bg').css('display', 'none')
+  })
+  $('#modalShow').on('click', () => {
+    $('.modal-bg').css('display', 'block')
+  })
+  $(".modalBox").on('click', function(e) {
+    e.stopPropagation();
+  });
+  $('.modal-bg').on('click', () => {
+    $('.modal-bg').css('display', 'none')
+  })
+
   return (
     <div className="App">
       <div className='navbar'>
@@ -77,9 +94,6 @@ function App() {
           <Link to="/new"><button>Add New Recipe</button></Link>
           <Link to="/"><button>Cookbook Home</button></Link>
         </div>
-      </div>
-      <div className='modal-bg'>
-        <div className='modal'></div>
       </div>
       <div className='display'>
         <Routes>

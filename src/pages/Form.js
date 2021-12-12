@@ -56,7 +56,7 @@ const Form = ({initialRecipe, handleSubmit, buttonLabel}) => {
                 name='url'
                 placeholder='Recipe Reference URL - Leave Blank for Original Recipes'
             />
-            <input type='submit' value={buttonLabel} />
+            <input id='submit' type='submit' value={buttonLabel} />
         </form>
      </div>
 }
