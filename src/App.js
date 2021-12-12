@@ -78,6 +78,9 @@ function App() {
           <Link to="/"><button>Cookbook Home</button></Link>
         </div>
       </div>
+      <div className='modal-bg'>
+        <div className='modal'></div>
+      </div>
       <div className='display'>
         <Routes>
           <Route path='/' element={<AllRecipes recipes={recipes} />} />
