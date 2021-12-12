@@ -8,6 +8,17 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
     const ingredients = recipe?.ingredients.split(',')
 
     return <div className='sDisplay'>
+        <div className='modal-bg'>
+            <div className='modalBox'>
+                <h1>Are you sure want you delete this recipe?</h1>
+                <h3>{recipe?.name}</h3>
+                <img src={`${recipe?.image}`} />
+                <div className='modalButtons'>
+                    <button id='modalHide'>Cancel</button>
+                    <button onClick={() => deleteRecipe(recipe)}>Delete</button>
+                </div>
+            </div>
+        </div>
         <div className='singleRecipe'>
             <div className='cardLeft'>
                 <h1>{recipe?.name}</h1>
@@ -37,14 +48,11 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
                 <p className='reference'>Original Recipe</p> :
                 <p><a className='reference' href={recipe?.url}>{recipe?.url}</a></p>}
                 <div className='rButtons'>
-                    <button onClick={() => deleteRecipe(recipe)}>Delete</button>
                     <button onClick={() => edit(recipe)}>Edit</button>
+                    <button id='modalShow'>Delete</button>
                 </div>
             </div>
-        </div>  
-        <Link to='/'>
-                    <button>CookBook Home</button>
-                </Link>      
+        </div>     
     </div>
 }
 

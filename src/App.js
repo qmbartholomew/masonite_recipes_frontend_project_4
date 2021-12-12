@@ -1,6 +1,8 @@
 import './styles.css';
 import {useState, useEffect} from 'react'
 import {Route, Routes, Link, useNavigate} from 'react-router-dom'
+import $ from 'jquery'
+
 
 /*      COMPONENTES     */
 import AllRecipes from './pages/AllRecipes';
@@ -68,6 +70,21 @@ function App() {
   useEffect(() => {
     getRecipes()
   }, [])
+
+  /*      JQuery      */
+  
+  $('#modalHide').on('click', () => {
+    $('.modal-bg').css('display', 'none')
+  })
+  $('#modalShow').on('click', () => {
+    $('.modal-bg').css('display', 'block')
+  })
+  $(".modalBox").on('click', function(e) {
+    e.stopPropagation();
+  });
+  $('.modal-bg').on('click', () => {
+    $('.modal-bg').css('display', 'none')
+  })
 
   return (
     <div className="App">
