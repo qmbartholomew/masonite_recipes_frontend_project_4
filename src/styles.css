@@ -210,14 +210,17 @@ form {
     height: 50rem;
     width: 60%;
     margin: 10% auto;
-    background-color: #D198C5FF;
+    background-color: #DF6589FF;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
 }
-.modalBox h1 {
-    color: #E0C568FF;
+.modalBox h2 {
+    color: #FCF951FF;
     margin-top: 2%;
+}
+.modalBox h3 {
+    color: #3C1053FF;
 }
 .modalBox img {
     height: 50%;
@@ -233,4 +236,14 @@ form {
     margin: auto;
     display: flex;
     justify-content: space-between;
+}
+.modalButtons button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #f8c8e2;
+}
+.modalButtons button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    transition: .4s;
+    border: 1px solid #FCF951FF;
 }

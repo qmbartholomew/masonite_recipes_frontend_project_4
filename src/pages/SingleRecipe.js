@@ -10,7 +10,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
     return <div className='sDisplay'>
         <div className='modal-bg' onClick={modalHide}>
             <div className='modalBox'>
-                <h1>Are you sure want you delete this recipe?</h1>
+                <h2>Are you sure want you delete this recipe?</h2>
                 <h3>{recipe?.name}</h3>
                 <img src={`${recipe?.image}`} />
                 <div className='modalButtons'>
@@ -46,7 +46,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
                 </div>
                 {recipe?.url == "Original Recipe" ?
                 <p className='reference'>Original Recipe</p> :
-                <p><a className='reference' href={recipe?.url}>{recipe?.url}</a></p>}
+                <p><a className='reference' href={recipe?.url} target='_blank'>{recipe?.url}</a></p>}
                 <div className='rButtons'>
                     <button onClick={() => edit(recipe)}>Edit</button>
                     <button onClick={modalShow}>Delete</button>
