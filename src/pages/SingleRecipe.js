@@ -21,14 +21,14 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
         </div>
         <div className='singleRecipe'>
             <div className='cardLeft'>
-                <h1>{recipe?.name}</h1>
+                <div className='cardLeftTitle'>{recipe?.name}</div>
                 <img src={`${recipe?.image}`} />
             </div>
             <div className='vr' />
             <div className='cardRight'>
                 <div className='rInfo'>
                     <div className='rInstructions'>
-                        <h3>Recipe Instructions</h3>
+                        <div className='rInstructionsTitle'>Recipe Instructions</div>
                         <ol>
                             {instructions?.map((i) => {
                                 return <li>{i}</li>
@@ -36,7 +36,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
                         </ol>
                     </div>
                     <div className='rIngredients'>
-                        <h3>Recipe Ingredients</h3>
+                        <div className='rIngredientsTitle'>Recipe Ingredients</div>
                         <ul>
                             {ingredients?.map((i) => {
                                 return <li>{i}</li>
