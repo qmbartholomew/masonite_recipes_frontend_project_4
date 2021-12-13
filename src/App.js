@@ -39,6 +39,7 @@ function App() {
       },
       body: JSON.stringify(newRecipe)
     })
+    console.log(newRecipe)
     getRecipes()
   }
 
