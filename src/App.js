@@ -16,10 +16,12 @@ function App() {
   const [recipes, setRecipes] = useState([])
   const nullRecipe = {
     name: '',
+    description: '',
     image: '',
     instructions: '',
     ingredients: '',
-    url: 'Original Recipe'
+    author: '',
+    url: ''
   }
   const [targetRecipe, setTargetRecipe] = useState(nullRecipe)
 

@@ -4,8 +4,8 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
     const params = useParams()
     const id = parseInt(params.id)
     const recipe = recipes.find((r) => r.id === id)
-    const instructions = recipe?.instructions.split(',')
-    const ingredients = recipe?.ingredients.split(',')
+    const instructions = recipe?.instructions.split('\\')
+    const ingredients = recipe?.ingredients.split('\\')
 
     return <div className='sDisplay'>
         <div className='modal-bg' onClick={modalHide}>
@@ -44,9 +44,9 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
                         </ul>
                     </div>
                 </div>
-                {recipe?.url == "Original Recipe" ?
+                {recipe?.url == "" ?
                 <p className='reference'>Original Recipe</p> :
-                <p><a className='reference' href={recipe?.url} target='_blank'>{recipe?.url}</a></p>}
+                <p>Recipe By: <a className='reference' href={recipe?.url} target='_blank'>{recipe?.author}</a></p>}
                 <div className='rButtons'>
                     <button onClick={() => edit(recipe)}>Edit</button>
                     <button onClick={modalShow}>Delete</button>

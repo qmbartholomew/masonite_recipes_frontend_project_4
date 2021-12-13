@@ -31,6 +31,13 @@ const Form = ({initialRecipe, handleSubmit, buttonLabel}) => {
             <input
                 type='text'
                 onChange={handleChange}
+                value={formData.description}
+                name='description'
+                placeholder='A Brief Description About Your Recipe'
+            />
+            <input
+                type='text'
+                onChange={handleChange}
                 value={formData.image}
                 name='image'
                 placeholder='Link to Recipe Image'
@@ -40,14 +47,21 @@ const Form = ({initialRecipe, handleSubmit, buttonLabel}) => {
                 onChange={handleChange}
                 value={formData.instructions}
                 name='instructions'
-                placeholder='Recipe Instructions (Separated by commas)'
+                placeholder='Recipe Instructions (Separated by forward slashes "\")'
             />
             <input
                 type='text'
                 onChange={handleChange}
                 value={formData.ingredients}
                 name='ingredients'
-                placeholder='Recipe Ingredients (Separated by commas)'
+                placeholder='Recipe Ingredients (Separated by forward slashes "\")'
+            />
+            <input
+                type='text'
+                onChange={handleChange}
+                value={formData.author}
+                name='author'
+                placeholder='Recipe Author - Leave blank for Original Recipes'
             />
             <input
                 type='text'

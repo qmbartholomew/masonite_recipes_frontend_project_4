@@ -10,10 +10,6 @@ import 'milligram'
 
 ReactDOM.render(
   <Router>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Masonite Cookbook</title>
-    </Helmet>
     <React.StrictMode>
       <App />
     </React.StrictMode>
