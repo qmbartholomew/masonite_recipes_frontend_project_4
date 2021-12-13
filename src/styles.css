@@ -51,34 +51,35 @@
 .iDisplay {
     height: 100%;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 7vh;
     display: flex;
     flex-wrap: wrap;
 }
 .recipeCard {
-    height: 30rem;
+    max-height: 35rem;
     width: 24%;
-    border: 1px solid rgba(0, 0, 0, .5);
+    border: 1px solid #f8c8e2;
     border-radius: 5px;
     margin: 10px auto;
 }
 .recipeCard:hover {
-    background-color: rgba(0, 0, 0, .6);
-    border: 1px solid rgba(255, 255, 255, .7);
-    transition: .3s;
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid #3C1053FF;
+    transition: .4s;
 }
 .recipeCard h3 {
-    color: rgb(205, 139, 221);
+    font-size: 2vw;
+    color: #8BBEE8FF;
 }
 .recipeCard p {
-    color: #8BBEE8FF;
+    color: #FFFDD0;
     margin-top: 20px;
+    font-size: 1vw;
 }
 .recipeCard img {
     height: 50%;
     width: 55%;
-    margin: 15px auto;
+    margin: 15px auto 0 auto;
     border: .5px solid rgba(0, 0, 0, .6);
     border-radius: 5px;
     box-shadow: 0 0 1px white;
@@ -127,9 +128,16 @@
     align-items: center;
     justify-content: center;
 }
+.rInfo a {
+    color: #FFFDD0;
+}
+.cardRight a:visited {
+    color: #FFFDD0;
+}
 .rInfo {
     height: 80%;
-    padding-top: 9%;
+    padding-top: 7%;
+    padding-bottom: 2%;
     display: flex;
 }
 .rInfo li, ul {
@@ -137,10 +145,12 @@
 }
 .rInstructions {
     width: 50%;
+    overflow: auto;
 }
 .rIngredients {
     width: 50%;
     padding-left: 15px;
+    overflow: auto;
 }
 .reference {
     color: #D1FFEA;
@@ -168,11 +178,11 @@
     flex-direction: column;
     align-items: center;
     justify-items: flex-end;
-    margin-top: 7%;
+    margin-top: 9vh;
 }
 .fDisplay img {
     height: auto;
-    width: 15%;
+    max-width: 20vw;
     margin-bottom: 3%;
     box-shadow: 0 0 6px rgba(0, 0, 0, .7);
 }
@@ -210,17 +220,18 @@ form {
     height: 50rem;
     width: 60%;
     margin: 10% auto;
-    background-color: #DF6589FF;
-    border-radius: 5%;
+    background-image: linear-gradient(#455E89, #2E6F95, #1780A1, #0091AD);
+    box-shadow: 0 0 6px #892B64;
+    border-radius: 1%;
     display: flex;
     flex-direction: column;
 }
 .modalBox h2 {
-    color: #FCF951FF;
+    color: rgb(205, 139, 221);
     margin-top: 2%;
 }
 .modalBox h3 {
-    color: #3C1053FF;
+    color: #FFFDD0;
 }
 .modalBox img {
     height: 50%;
@@ -245,5 +256,5 @@ form {
     background-color: rgba(255, 255, 255, 0.4);
     color: black;
     transition: .4s;
-    border: 1px solid #FCF951FF;
+    border: 1px solid #892B64;
 }
