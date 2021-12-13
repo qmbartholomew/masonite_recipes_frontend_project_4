@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 
-const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
+const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
     const params = useParams()
     const id = parseInt(params.id)
     const recipe = recipes.find((r) => r.id === id)
@@ -8,13 +8,13 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
     const ingredients = recipe?.ingredients.split(',')
 
     return <div className='sDisplay'>
-        <div className='modal-bg'>
+        <div className='modal-bg' onClick={modalHide}>
             <div className='modalBox'>
                 <h1>Are you sure want you delete this recipe?</h1>
                 <h3>{recipe?.name}</h3>
                 <img src={`${recipe?.image}`} />
                 <div className='modalButtons'>
-                    <button id='modalHide'>Cancel</button>
+                    <button onClick={modalHide}>Cancel</button>
                     <button onClick={() => deleteRecipe(recipe)}>Delete</button>
                 </div>
             </div>
@@ -49,7 +49,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe}) => {
                 <p><a className='reference' href={recipe?.url}>{recipe?.url}</a></p>}
                 <div className='rButtons'>
                     <button onClick={() => edit(recipe)}>Edit</button>
-                    <button id='modalShow'>Delete</button>
+                    <button onClick={modalShow}>Delete</button>
                 </div>
             </div>
         </div>     

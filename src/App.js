@@ -66,25 +66,19 @@ function App() {
     navigate('/')
   }
 
+  const modalShow = () => {
+      $('.modal-bg').css('display', 'block')
+  }
+  const modalHide = () => {
+    $('.modal-bg').css('display', 'none')
+}
+
   /*      USEEFFECT     */
   useEffect(() => {
     getRecipes()
   }, [])
 
-  /*      JQuery      */
   
-  $('#modalHide').on('click', () => {
-    $('.modal-bg').css('display', 'none')
-  })
-  $('#modalShow').on('click', () => {
-    $('.modal-bg').css('display', 'block')
-  })
-  $(".modalBox").on('click', function(e) {
-    e.stopPropagation();
-  });
-  $('.modal-bg').on('click', () => {
-    $('.modal-bg').css('display', 'none')
-  })
 
   return (
     <div className="App">
@@ -102,6 +96,8 @@ function App() {
           recipes={recipes}
           edit={getTargetRecipe}
           deleteRecipe={deleteRecipe}
+          modalShow={modalShow}
+          modalHide={modalHide}
             />} />
           <Route path='/new' element={<Form
             initialRecipe={nullRecipe}
