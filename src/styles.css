@@ -1,3 +1,4 @@
+/* Website icon provided by berkahicon via flaticon.com */
 /*          OVERALL, BACKGROUND STYLING         */
 .App {
     position: fixed;
@@ -16,7 +17,7 @@
     top: 0;
     left: 0;
     height: 7%;
-    width: 100%;
+    width: 100vw;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -26,37 +27,44 @@
 }
 .navTitle {
     margin: 1%;
-    font-size: x-large;
+    font-size: 3vh;
 }
 .navLinks {
+    width: 30vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 1%;
 }
-.navLinks button {
+.navButton {
     margin: 0 5px 0 5px;
+    padding: 4px;
+    color: white;
     background-color: inherit;
     border: none;
+    transition: padding .45s ease-out;
 }
-.navLinks button:focus {
+.navButton:focus {
     background-color: inherit;
+    color: inherit;
     border: none;
 }
-.navLinks button:hover {
+.navButton:hover {
+    padding: 5px 17px;
     background-color: white;
     color: black;
-    transition: .4s;
+    transition: .45s;
 }
 /*          INDEX PAGE STYLING            */
 .iDisplay {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     padding-top: 7vh;
     display: flex;
     flex-wrap: wrap;
 }
 .recipeCard {
-    max-height: 35rem;
+    min-height: 30vh;
+    max-height: 35vh;
     width: 24%;
     border: 1px solid #f8c8e2;
     border-radius: 5px;
@@ -67,8 +75,10 @@
     border: 1px solid #3C1053FF;
     transition: .4s;
 }
-.recipeCard h3 {
-    font-size: 2vw;
+.recipeCardTitle {
+    min-height: 10%;
+    max-height: 15%;
+    font-size: 1.5vw;
     color: #8BBEE8FF;
 }
 .recipeCard p {
@@ -77,7 +87,8 @@
     font-size: 1vw;
 }
 .recipeCard img {
-    height: 50%;
+    min-height: 50%;
+    max-height: 50%;
     width: 55%;
     margin: 15px auto 0 auto;
     border: .5px solid rgba(0, 0, 0, .6);
@@ -147,10 +158,16 @@
     width: 50%;
     overflow: auto;
 }
+.rInstructionsTitle {
+    font-size: 3vh;
+}
 .rIngredients {
     width: 50%;
     padding-left: 15px;
     overflow: auto;
+}
+.rIngredientsTitle {
+    font-size: 3vh;
 }
 .reference {
     color: #D1FFEA;
@@ -257,4 +274,89 @@ form {
     color: black;
     transition: .4s;
     border: 1px solid #892B64;
+}
+
+/*          MOBILE RESPONSIVE STYLING           */
+/* Responsive design for screens smaller than a tablet  */
+@media (max-width: 767px) {
+    /*          NAVBAR STYLING          */
+    .navbar {
+        width: 100vw;
+        justify-content: space-between;
+    }
+    .navTitle {
+        width: 30vw;
+        align-self: center;
+        font-size: 1vh;
+    }
+    .navLinks {
+        width: 45vw;
+    }
+    .navButton {
+        max-width: 20vw;
+        margin: auto;
+        font-size: .75vh;
+    }
+    .navButton:hover {
+        background-color: inherit;
+        color: inherit;
+}
+    /*          INDEX STYLING           */
+    .recipeCard {
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .recipeCardTitle {
+        width: 100%;
+        font-size: 1vh;
+        margin: 1vh 0 0 0;
+    }
+    .recipeCard img {
+        min-height: 10vh;
+        max-height: vh;
+        width: 70%;
+        margin: 5% 0;
+    }
+    .recipeCard p {
+        display: none;
+    }
+    /*          SHOW STYLING            */
+    .singleRecipe {
+        margin-top: 7vh;
+        flex-direction: column;
+    }
+    .cardLeft {
+        width: 100%;
+    }
+    .cardLeftTitle {
+        margin: 1vh 0;
+        font-size: 5vw;
+    }
+    .cardLeft img {
+        height: auto;
+        width: 60vw;
+    }
+    .vr {
+        display: none;
+    }
+    .cardRight {
+        height: 60%;
+        width: 95%;
+    }
+    .rInstructionsTitle{
+        font-size: 1.75vh;
+    }
+    .rIngredientsTitle{
+        font-size: 1.75vh;
+    }
+    /*          FORM STYLING            */
+    .fDisplay img {
+        height: auto;
+        max-width: 80vw;
+    }
+    .rInfo li, ul {
+        font-size: 1vh;
+    }
 }

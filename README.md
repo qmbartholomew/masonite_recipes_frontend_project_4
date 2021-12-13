@@ -6,7 +6,7 @@
 
 This is an online cookbook/recipe databse. Users can input their favorite recipes for easy collection in one place.
 
-<a href="#">Live link</a>
+[Live link](https://jovial-murdock-015ae3.netlify.app/)
 
 ## Components
 
@@ -24,10 +24,10 @@ This is an online cookbook/recipe databse. Users can input their favorite recipe
 
 | URL | Component | Action |
 |-----|--------|--------|
-| / | <SingleRecipe /> | Displays all recipes currently in the cookbook.
-| /recipes/:id | <SingleRecipe /> | Displays a specific recipe
-| /new | <Form /> | Displays an empty form for a user to create/input a new recipe
-| /edit/:id | <Form /> | Displays a form populated with a recipe's data for a user to update/edit
+| / | AllRecipes | Displays all recipes currently in the cookbook.
+| /recipes/:id | SingleRecipe | Displays a specific recipe
+| /new | Form | Displays an empty form for a user to create/input a new recipe
+| /edit/:id | Form | Displays a form populated with a recipe's data for a user to update/edit
 
 ## User Stories
 
@@ -45,9 +45,6 @@ A user should be able to access/redirect to the homepage at any point
 
 ## Challenges
 
-Chrome was giving me a few issues and throwing a 500 error any time I would try to create a new recipe (using both thunderclient as well as my deployed frontend) - this issue is still unresolved, however using a different browser did work. More of a personal challenge than an overall project challenge
-___
-
 Once a specific recipe (show page) was loaded, if a user refreshed the page on the deployed/live site netlify would return a 404 error. The fix (found [here](https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router)) was to add a _redirects file:
 
 >/frontend/public/_redirects
@@ -55,9 +52,16 @@ Once a specific recipe (show page) was loaded, if a user refreshed the page on t
 /*  /index.html  200
 ```
 ___
+
 Dynamically setting a modal for each recipe/item on the index page proved to be an issue. I was able to get a modal generated however it would only take up the width of the recipe/item div. Beyond that, the true issue was attatching an event listener to each item so that it would only trigger/display it's respective modal with the proper information. 
 - I believe that jQuery may not be the best course of action to accomplish this, however I didn't have the time needed to explore other options
 - I ultimately decided against the idea and created a modal on the show page instead, however feel it may be possible to accomplish with a bit more thought.
+___
+
+CSS in general! I'm learning more and more tricks as I continue to build my portfolio, but still struggle from time to time. After many google searches (truthfully narrowing down the correct search) I usually find my solution but that can be after an hour of wall-staring. The main bits of trouble I had with this piece was on the mobile responsiveness. The pesky recipe cards on the index page are a bit too tall for my liking and most things that I tried weren't sufficient. I'll definitely be coming back to this.
+___
+
+Chrome was giving me a few issues and throwing a 500 error any time I would try to create a new recipe (using both thunderclient as well as my deployed frontend) - this issue is still unresolved, however using a different browser did work. More of a personal challenge than an overall project challenge
 
 ## List of Technologies
 
@@ -88,6 +92,6 @@ Dynamically setting a modal for each recipe/item on the index page proved to be 
 
 - A proper footer with links for contact, socials, etc.
 
-- More animations!
+- Easier/smoother transition when mouse leaves nav buttons
 
-- Better responsiveness
+- More animations!

@@ -88,8 +88,8 @@ function App() {
       <div className='navbar'>
         <div className='navTitle'>Masonite Cookbook</div>
         <div className='navLinks'>
-          <Link to="/new"><button>Add New Recipe</button></Link>
-          <Link to="/"><button>Cookbook Home</button></Link>
+          <Link to="/new" className='navButton'>Add Recipe</Link>
+          <Link to="/" className='navButton'>Home</Link>
         </div>
       </div>
       <div className='display'>
