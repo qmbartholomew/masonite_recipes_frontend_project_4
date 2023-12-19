@@ -12,7 +12,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
             <div className='modalBox'>
                 <h2>Are you sure want you delete this recipe?</h2>
                 <h3>{recipe?.name}</h3>
-                <img src={`${recipe?.image}`} alt={`Image of ${recipe.name}`}/>
+                <img src={`${recipe?.image}`} alt={recipe.name}/>
                 <div className='modalButtons'>
                     <button onClick={modalHide}>Cancel</button>
                     <button onClick={() => deleteRecipe(recipe)}>Delete</button>
@@ -22,7 +22,7 @@ const SingleRecipe = ({recipes, edit, deleteRecipe, modalShow, modalHide}) => {
         <div className='singleRecipe'>
             <div className='cardLeft'>
                 <div className='cardLeftTitle'>{recipe?.name}</div>
-                <img src={`${recipe?.image}`} alt={`Image of ${recipe.name}`}/>
+                <img src={`${recipe?.image}`} alt={recipe.name}/>
             </div>
             <div className='vr' />
             <div className='cardRight'>
