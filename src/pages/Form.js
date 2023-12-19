@@ -19,7 +19,7 @@ const Form = ({initialRecipe, handleSubmit, buttonLabel}) => {
     }
 
     return <div className='fDisplay'>
-        <img src='https://cdn.discordapp.com/attachments/668856899503915047/919395465341063218/Screen_Shot_2021-12-11_at_5.09.12_PM.png' />
+        <img src='https://cdn.discordapp.com/attachments/668856899503915047/919395465341063218/Screen_Shot_2021-12-11_at_5.09.12_PM.png' alt=''/>
         <form onSubmit={handleSubmission}>
             <input
                 type='text'

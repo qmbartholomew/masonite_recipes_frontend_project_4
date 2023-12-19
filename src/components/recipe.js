@@ -6,7 +6,7 @@ const Recipe = ({recipe}) => {
         <div className='recipeCard'>
             <Link to={`/recipes/${recipe.id}`}>
                 <div className='recipeCardTitle'>{recipe.name}</div>
-                <img src={`${recipe.image}`} />
+                <img src={`${recipe.image}`} alt={`Image of ${recipe.name}`}/>
                 <p>{recipe.description}</p>
             </Link>
         </div>
