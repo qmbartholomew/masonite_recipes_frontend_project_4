@@ -11,7 +11,7 @@ import Form from './pages/Form';
 
 function App() {
   /*      STATE AND VARIABLES     */
-  const URL = 'https://qb-masonite-cookbook-backend.herokuapp.com/recipes/'
+  const URL = 'qb-masonite-cookbook-backend-f591c97e8153.herokuapp.com/recipes/'
   const navigate = useNavigate()
   const [recipes, setRecipes] = useState([])
   const nullRecipe = {
